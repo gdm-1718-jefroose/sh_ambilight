@@ -34,9 +34,6 @@ $(function(){
     image.src = 'images/colorwheel1.png';
 
     picker.addEventListener('mousemove',function(e){
-    // $('#picker').mousemove(function(e) { // mouse move handler
-            // get coordinates of current position
-        // console.log(this);
         if(moving){
             let canvasOffset = $(canvas).offset();
             let canvasX = Math.floor(e.pageX - canvasOffset.left);
@@ -50,6 +47,10 @@ $(function(){
                 moving = false;
                 setTimeout(function() { moving = true; }, 2000);
             }
+            this.addEventListener('mouseleave', function (e) {
+                moving = false;
+                setTimeout(function() { moving = true; }, 1000);
+            })
         }
 
     });
@@ -69,27 +70,27 @@ $(function(){
     }
     function getControls (){
         controlR.addEventListener('input', function (evt) {
-            r = this.value;
+            r = parseInt(this.value);
             makeChange();
         });
         controlG.addEventListener('input', function (evt) {
-            g = this.value;
+            g = parseInt(this.value);
             makeChange();
         });
         controlB.addEventListener('input', function (evt) {
-            b = this.value;
+            b = parseInt(this.value);
             makeChange();
         });
         numberR.addEventListener('input', function (evt) {
-            r = this.value;
+            r = parseInt(this.value);
             makeChange();
         });
         numberG.addEventListener('input', function (evt) {
-            g = this.value;
+            g = parseInt(this.value);
             makeChange();
         });
         numberB.addEventListener('input', function (evt) {
-            b = this.value;
+            b = parseInt(this.value);
             makeChange();
         });
     }

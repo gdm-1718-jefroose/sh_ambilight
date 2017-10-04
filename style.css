@@ -25,6 +25,10 @@ nav {
 }
 #picker {
     margin-top:  1rem;
+    /*min-height: 300px;*/
+    /*min-width: 300px;*/
+    /*max-width:300px;*/
+    /*max-height: 300px;*/
 }
 .thumb active {
     display: none;
