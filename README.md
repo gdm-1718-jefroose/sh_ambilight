@@ -10,5 +10,28 @@ Ambilight with Sense Hat
 - Afstudeerrichting: **New Media Development**
 - Opleidingsinstelling: **Arteveldehogeschool**
 
-## Database
-- url: https://ambilight-c124f.firebaseio.com
+## Deploy
+
+### Clone
+
+```
+$ cd ~/Code/
+```
+
+```
+$ git clone https://github.com/gdm-1718-jefroose/sh_ambilight.git
+```
+
+### Install
+
+Install the Sense Hat package on your Raspberry Pi
+
+```
+$ sudo apt-get update
+```
+```
+$ sudo apt-get install sense-hat
+```
+```
+$ sudo reboot
+```
