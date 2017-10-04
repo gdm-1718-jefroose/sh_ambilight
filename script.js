@@ -11,6 +11,7 @@ $(function(){
     const numberG = document.getElementById('gNum');
     const numberB =  document.getElementById('bNum');
     getControls();
+    getdbColors();
     // create canvas and context objects
     const canvas = document.getElementById('picker');
     const ctx = canvas.getContext('2d');
@@ -93,6 +94,13 @@ $(function(){
             green: green,
             blue : blue
         });
+    }
+    function getdbColors(){
+        colorRef = database.ref('colors').get();
+        console.log(colorRef);
+        r = 255;
+        g = 255;
+        b = 255;
     }
 
 });
