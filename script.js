@@ -5,8 +5,12 @@ $(function(){
     let colorRef = database.ref('colors');
     colorRef.on('value', function(snapshot) {
         colors = snapshot.val();
-            setPreview(colors.red, colors.green, colors.blueblue)
-            setControls(colors.red, colors.green, colors.blueblue)
+            r = colors.red;
+            g = colors.green;
+            b = colors.blue;
+        setPreview(r, g, b);
+        setControls(r, g, b);
+
     });
 
     const picker = document.getElementById('picker');
