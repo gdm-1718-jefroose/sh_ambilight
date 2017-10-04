@@ -2,14 +2,15 @@ $(function(){
     // Get a reference to the database service
     var database = firebase.database();
     var r = 255,g = 255,b = 255;
-    let colorRef = database.ref('colors');
-    colorRef.on('value', function(snapshot) {
-        colors = snapshot.val();
-        r = colors.red;
-        g = colors.green;
-        b = colors.blue;
-        makeChange();
-    });
+    // let colorRef = database.ref('colors');
+    // colorRef.on('value', function(snapshot) {
+    //     setTimeout(function(){colors = snapshot.val();
+    //         r = colors.red;
+    //         g = colors.green;
+    //         b = colors.blue;
+    //         makeChange();}, 1000);
+    // });
+
     const picker = document.getElementById('picker');
     const preview = document.getElementById('preview');
     const controlR  = document.getElementById('rVal');
@@ -96,11 +97,12 @@ $(function(){
         setControls(r,g,b);
     }
     function setSenseHatColorDisplay(red, green, blue){
-        database.ref('colors').set({
-            red: red,
-            green: green,
-            blue : blue
-        });
+            database.ref('colors').set({
+                red: red,
+                green: green,
+                blue : blue
+            });
+
     }
 
 
