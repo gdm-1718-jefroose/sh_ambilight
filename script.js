@@ -2,6 +2,14 @@ $(function(){
     // Get a reference to the database service
     var database = firebase.database();
     var r = 255,g = 255,b = 255;
+    let colorRef = database.ref('colors');
+    colorRef.on('value', function(snapshot) {
+        colors = snapshot.val();
+        r = colors.red;
+        g = colors.green;
+        b = colors.blue;
+        makeChange();
+    });
     const picker = document.getElementById('picker');
     const preview = document.getElementById('preview');
     const controlR  = document.getElementById('rVal');
@@ -11,7 +19,6 @@ $(function(){
     const numberG = document.getElementById('gNum');
     const numberB =  document.getElementById('bNum');
     getControls();
-    getdbColors();
     // create canvas and context objects
     const canvas = document.getElementById('picker');
     const ctx = canvas.getContext('2d');
@@ -95,12 +102,6 @@ $(function(){
             blue : blue
         });
     }
-    function getdbColors(){
-        colorRef = database.ref('colors').get();
-        console.log(colorRef);
-        r = 255;
-        g = 255;
-        b = 255;
-    }
+
 
 });
