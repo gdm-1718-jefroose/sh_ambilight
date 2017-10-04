@@ -9,3 +9,6 @@ Ambilight with Sense Hat
 - Opleiding: **Bachelor in de grafische en digitale media**
 - Afstudeerrichting: **New Media Development**
 - Opleidingsinstelling: **Arteveldehogeschool**
+
+## Database
+- url: https://ambilight-c124f.firebaseio.com

@@ -1,4 +1,7 @@
 $(function(){
+    // Get a reference to the database service
+    var database = firebase.database();
+
     var r = 255,g = 255,b = 255;
     const picker = document.getElementById('picker');
     const preview = document.getElementById('preview');
@@ -86,15 +89,20 @@ $(function(){
         setControls(r,g,b);
     }
     function setSenseHatColorDisplay(red, green, blue){
-        var colorstring = red+"|"+green+"|"+blue;
-        var req = new XMLHttpRequest();
-        req.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("outputarea").innerHTML = this.responseText;
-            }
-        };
-        req.open("POST","/python/shcolorchooser.py",true);
-        req.send(colorstring);
+        database.ref().set({
+            red: red,
+            green: green,
+            blue : blue
+        });
+        // var colorstring = red+"|"+green+"|"+blue;
+        // var req = new XMLHttpRequest();
+        // req.onreadystatechange = function() {
+        //     if (this.readyState == 4 && this.status == 200) {
+        //         document.getElementById("outputarea").innerHTML = this.responseText;
+        //     }
+        // };
+        // req.open("POST","/python/shcolorchooser.py",true);
+        // req.send(colorstring);
     }
 
 });
