@@ -17,7 +17,7 @@ while True:
     bluevalue = colors['blue']
 
     colorsh = (redvalue, greenvalue, bluevalue)
-
+    print(colorsh)
     canvas = [
         colorsh, colorsh, colorsh, colorsh, colorsh, colorsh, colorsh, colorsh,
         colorsh, colorsh, colorsh, colorsh, colorsh, colorsh, colorsh, colorsh,
