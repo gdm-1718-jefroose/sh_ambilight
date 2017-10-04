@@ -2,14 +2,12 @@ $(function(){
     // Get a reference to the database service
     var database = firebase.database();
     var r = 255,g = 255,b = 255;
-    // let colorRef = database.ref('colors');
-    // colorRef.on('value', function(snapshot) {
-    //     setTimeout(function(){colors = snapshot.val();
-    //         r = colors.red;
-    //         g = colors.green;
-    //         b = colors.blue;
-    //         makeChange();}, 1000);
-    // });
+    let colorRef = database.ref('colors');
+    colorRef.on('value', function(snapshot) {
+        colors = snapshot.val();
+            setPreview(colors.red, colors.green, colors.blueblue)
+            setControls(colors.red, colors.green, colors.blueblue)
+    });
 
     const picker = document.getElementById('picker');
     const preview = document.getElementById('preview');
