@@ -35,3 +35,4 @@ $ sudo apt-get install sense-hat
 ```
 $ sudo reboot
 ```
+
