@@ -36,8 +36,10 @@ $(function(){
     picker.addEventListener('mousemove',function(e){
         if(moving){
             let canvasOffset = $(canvas).offset();
+            console.log($(canvas));
             let canvasX = Math.floor(e.pageX - canvasOffset.left);
             let canvasY = Math.floor(e.pageY - canvasOffset.top);
+            console.log(canvasY);
             // get current pixel
             let imageData = ctx.getImageData(canvasX, canvasY, 1, 1);
             let pixel = imageData.data;
