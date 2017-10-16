@@ -1,5 +1,5 @@
 body {
-    background-color: #e0e0e0;
+    /*background-color: #e0e0e0;*/
 }
 nav {
     background-color: #37474f;
@@ -25,6 +25,7 @@ nav {
 }
 #picker {
     margin-top:  1rem;
+    text-align: center;
     /*min-height: 300px;*/
     /*min-width: 300px;*/
     /*max-width:300px;*/
@@ -32,4 +33,13 @@ nav {
 }
 .thumb active {
     display: none;
+}
+.canvas-container {
+    text-align: center;
+}
+.row {
+    margin: 0;
+}
+.colorpicker {
+    /*margin-top: 1rem;*/
 }
